@@ -1,53 +1,101 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-.calculator {
-    width: 250px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
-.display {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    font-size: 24px;
-    text-align: right;
-    background-color: #444;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-}
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-.keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
+  <title>Frontend Mentor | Calculator app</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
-.key {
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    font-size: 24px;
-    text-align: center;
-    background-color: #444;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
+  <link rel="stylesheet" href="./style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
 
-.key:hover {
-    background-color: #555;
-}
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
 
-.key:active {
-    background-color: #666;
-}
+<body>
+
+  <div class="calculator-main-div" theme="1">
+    <div class="calculator-frame">
+      <!-- header -->
+      <div class="calculator-header d-flex justify-content-between">
+        <div class="calculator-name">
+          calc
+        </div>
+        <!-- <div> -->
+        <!-- <sup>
+            1 2 3
+          </sup> -->
+        <form class="theme-div" id="themeForm">
+
+          <div> 1<input type="radio" name="theme" value="1" checked></div>
+          <div> 2<input type="radio" name="theme" value="2"></div>
+          <div> 3<input type="radio" name="theme" value="3"></div>
+        </form>
+        <!-- <input type="radio" name="theme" id="">
+          <input type="radio" name="theme" id=""> -->
+
+        <!-- </div> -->
+      </div>
+      <!-- display -->
+      <div class="calculator-display">
+        <div class="sign"></div>
+        <div class="calculating-numbers">
+          0
+        </div>
+      </div>
+      <div class="button-div">
+        <div class="btn-row">
+          <button class="number">7</button>
+          <button class="number">8</button>
+          <button class="number">9</button>
+          <button class="dark" onclick="deleteButton()">DEL</button>
+        </div>
+        <div class="btn-row">
+          <button class="number">4</button>
+          <button class="number">5</button>
+          <button class="number">6</button>
+          <button class="sign">+</button>
+        </div>
+        <div class="btn-row">
+          <button class="number">1</button>
+          <button class="number">2</button>
+          <button class="number">3</button>
+          <button class="sign">-</button>
+        </div>
+        <div class="btn-row">
+          <button class="dot">.</button>
+          <button class="number">0</button>
+          <button class="sign">/</button>
+          <button class="sign">*</button>
+        </div>
+        <div class="btn-row">
+          <button class="dark" onclick="resetCalculator()">RESET</button>
+          <button class="red" onclick="calculatorAnswer()">=</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+
+</html>
